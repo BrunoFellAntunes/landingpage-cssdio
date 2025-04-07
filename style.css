@@ -1,0 +1,210 @@
+/* === Reset e Variáveis=== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+:root {
+  --azul-escuro: #0052a3;
+  --azul-medio: #4d8ebd;
+  --azul-claro: #e6f0fa;
+  --cinza-escuro: #3a3a3a;
+  --cinza-claro: #f8f9fa;
+  --branco: #ffffff;
+}
+
+body {
+  line-height: 1.6;
+  color: var(--cinza-escuro);
+  background: var(--branco);
+}
+
+/* === Estilos Gerais === */
+h1,
+h2 {
+  color: var(--branco);
+  margin-bottom: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* === Header/Banner === */
+.banner {
+  height: 600px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+    url("assets/images/banner.png") center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  color: var(--branco);
+}
+
+.logo img {
+  width: 200px;
+  margin-bottom: 2rem;
+  animation: pulsar 2s infinite;
+}
+
+.banner h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  background: var(--azul-escuro);
+  color: var(--branco);
+  border: 2px solid var(--azul-claro);
+  border-radius: 2rem;
+  margin-top: 1rem;
+}
+
+.banner button:hover {
+  background: var(--azul-medio);
+  transform: translateY(-3px);
+}
+
+/* === Conteúdo Principal === */
+#course-content {
+  padding: 4rem 1rem;
+  background: var(--cinza-claro);
+  text-align: center;
+}
+
+.modules-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.module {
+  background: var(--branco);
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-left: 5px solid var(--azul-escuro);
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.module:hover {
+  transform: translateX(10px);
+}
+
+.module span {
+  color: var(--azul-escuro);
+  font-weight: 700;
+}
+
+/* === Seção Transform World === */
+#transform-world {
+  height: 400px;
+  background: url("assets/images/woman-code.png") fixed center/cover;
+  display: flex;
+  align-items: center;
+  padding: 0 10%;
+  position: relative;
+}
+
+#transform-world::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 82, 163, 0.8),
+    rgba(58, 58, 58, 0.9)
+  );
+}
+
+#transform-world p {
+  color: var(--azul-claro);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 1;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* === Seção Desafios === */
+#professional-challenges {
+  padding: 4rem 1rem;
+  text-align: center;
+  background: var(--azul-claro);
+}
+
+#professional-challenges img {
+  max-width: 800px;
+  width: 90%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+  border: 3px solid var(--azul-escuro);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* === Footer === */
+footer {
+  background: linear-gradient(135deg, var(--cinza-escuro), var(--azul-escuro));
+  color: var(--branco);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--azul-claro);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: var(--branco);
+  text-decoration: underline;
+}
+
+/* === Animações === */
+@keyframes pulsar {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+  .banner {
+    height: 500px;
+  }
+  .module {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner h1 {
+    font-size: 2rem;
+  }
+  #transform-world p {
+    font-size: 1.5rem;
+  }
+}
